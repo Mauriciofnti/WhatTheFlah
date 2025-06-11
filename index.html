@@ -86,7 +86,8 @@
 
             while (opcoes1_itens > 0) {
                 let numero_qualquer = Math.floor(Math.random() * 50);
-
+                let divatual = document.getElementById('item'+opcoes1_itens);
+                console.log(divatual)
                 let div = document.createElement("div");
                 div.id = "bandeira" + numero_qualquer;
 
@@ -98,7 +99,8 @@
 
                 console.log(numero_qualquer)
                 let nova_div_bandeira = document.createElement("div");
-                nova_div_bandeira.appendChild("<div id='bandeira"+opcoes1_itens.toString+"'><img src='src/images/"+numero_qualquer+".jpg' alt=''></div>")
+                divatual.createElement('img')
+                
                 opcoes1_itens = opcoes1_itens -1
             };
         }
