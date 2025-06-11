@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatTheFlah</title>
+    <style>
+        html {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>00:<span id="timer">30</span></div>
+
+    <section id="initpage">
+        <h1>Olá</h1>
+        <button onclick="iniciar()">Iniciar</button>
+    </section>
+    <section id="firstsec">
+        <h1 id="pergunta1">O idioma é espanhol?</h1>
+        <div id="opcoes1">
+            <div id="item1"><img src="" alt=""></div>
+            <div id="item2"><img src="" alt=""></div>
+            <div id="item3"><img src="" alt=""></div>
+            <div id="item4"><img src="" alt=""></div>
+            <div id="item5"><img src="" alt=""></div>
+            <div id="item6"><img src="" alt=""></div>
+            <div id="item7"><img src="" alt=""></div>
+            <div id="item8"><img src="" alt=""></div>
+            <div id="item9"><img src="" alt=""></div>
+        </div>
+    </section>
+    <section id="secondtsec">
+        <h1 id="pergunta2">A moeda é Real?</h1>
+        <div id="opcoes2">
+            <div id="item1"><img src="" alt=""></div>
+            <div id="item2"><img src="" alt=""></div>
+            <div id="item3"><img src="" alt=""></div>
+            <div id="item4"><img src="" alt=""></div>
+            <div id="item5"><img src="" alt=""></div>
+            <div id="item6"><img src="" alt=""></div>
+            <div id="item7"><img src="" alt=""></div>
+            <div id="item8"><img src="" alt=""></div>
+            <div id="item9"><img src="" alt=""></div>
+        </div>
+    </section>
+    <section id="thirdtsec">
+        <h1 id="pergunta3">O continente é América?</h1>
+        <div id="opcoes3">
+            <div id="item1"><img src="" alt=""></div>
+            <div id="item2"><img src="" alt=""></div>
+            <div id="item3"><img src="" alt=""></div>
+            <div id="item4"><img src="" alt=""></div>
+            <div id="item5"><img src="" alt=""></div>
+            <div id="item6"><img src="" alt=""></div>
+            <div id="item7"><img src="" alt=""></div>
+            <div id="item8"><img src="" alt=""></div>
+            <div id="item9"><img src="src/images/" alt=""></div>
+        </div>
+    </section>
+    <section id="lastpage">
+
+    </section>
+    <div>Acertos: <div id="acertos">0</div>/3</div>
+    </main>
+    <script>
+        let initpage = document.getElementById("initpage")
+        let firstsec = document.getElementById("firstsec");
+        let secondtsec = document.getElementById("secondtsec");
+        let thirdtsec = document.getElementById("thirdtsec");
+        let lastpage = document.getElementById("lastpage");
+        firstsec.style.display = "none";
+        secondtsec.style.display = "none";
+        thirdtsec.style.display = "none";
+        lastpage.style.display = "none";
+        let div_bandeira = document.getElementById("opcoes1");
+        console.log()
+
+
+        function iniciar () {
+            initpage.style.display = "none";
+            firstsec.style.display = "block";
+            let opcoes1_itens = document.getElementById("opcoes1").children.length
+
+            while (opcoes1_itens > 0) {
+                let numero_qualquer = Math.floor(Math.random() * 50);
+
+                let div = document.createElement("div");
+                div.id = "bandeira" + numero_qualquer;
+
+                let img = document.createElement("img");
+                img.src = "src/images/" + numero_qualquer + ".jpg"; // Assuming image format
+                img.alt = "";
+
+                // div.appendChild(img);
+
+                console.log(numero_qualquer)
+                let nova_div_bandeira = document.createElement("div");
+                nova_div_bandeira.appendChild("<div id='bandeira"+opcoes1_itens.toString+"'><img src='src/images/"+numero_qualquer+".jpg' alt=''></div>")
+                opcoes1_itens = opcoes1_itens -1
+            };
+        }
+
+    </script>
+</body>
+</html>
